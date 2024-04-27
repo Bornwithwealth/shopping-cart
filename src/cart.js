@@ -136,9 +136,26 @@ let TotalAmount =()=>{
     // console.log(amount);
     label.innerHTML =`
     <h2>Total Bill : $ ${amount}</h2>
-    <button class="checkout">Checkout</button> 
+    <a href="./clearcart.html"> <button class="checkout">Checkout</button></a> 
     <button onclick ="clearCart()"class="Removeall">Clear Cart</button> `;
   } else return;
 }
 
 TotalAmount();
+
+
+let checkout = ()=>{
+  basket = [];
+  generateCartItems();
+
+  calculation();
+  localStorage.setItem("data", JSON.stringify (basket));
+};
+
+
+// let first_name=prompt('Enter your first name');
+// let surname=prompt('Enter yoursurname');
+// let phone=prompt('Enter your phone number');
+// let Card =prompt('Enter your Card details');
+
+console.log("My name is '+' '+' I am'+' '+surname+' '+''+'call+'' '+' '+card'");
